@@ -38,6 +38,13 @@ function fillColor() {
       e.target.style.backgroundColor = colorPicker;
     }
   });
+
+  // Remove color
+  grid.addEventListener('dblclick', function(e) {
+    e.preventDefault();
+    e.target.style.backgroundColor = null;
+
+  });
 }
 
 fillColor();
