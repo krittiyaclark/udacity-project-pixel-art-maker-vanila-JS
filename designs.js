@@ -1,16 +1,18 @@
 // Submit button
-let submitButton = document.querySelector('#submitButton');
+let sizePicker = document.querySelector('#sizePicker');
 // Grid
 let grid = document.querySelector('#pixelCanvas');
 // When size is submitted by the user, call makeGrid()
-submitButton.addEventListener('click', function(e) {
+sizePicker.addEventListener('submit', function(e) {
   e.preventDefault();
-  makeGrid()
+  grid.innerHTML = '';
+  makeGrid();
   console.log('Work!');
 }); 
 
 // Create grid function
 function makeGrid() {
+  //grid.innerHTML = '';
   // Select size input
   let inputHeight = document.querySelector('#inputHeight').value;
   let inputWidth = document.querySelector('#inputWidth').value;
