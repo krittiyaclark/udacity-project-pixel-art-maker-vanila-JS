@@ -1,5 +1,3 @@
-// Select color input
-const colorPicker = document.querySelector('#colorPicker');
 // Submit button
 let submitButton = document.querySelector('#submitButton');
 // Grid
@@ -11,6 +9,7 @@ submitButton.addEventListener('click', function(e) {
   console.log('Work!');
 }); 
 
+// Create grid function
 function makeGrid() {
   // Select size input
   let inputHeight = document.querySelector('#inputHeight').value;
@@ -24,3 +23,21 @@ function makeGrid() {
     }
   }
 }
+
+// Fill color function
+function fillColor() {
+  grid.addEventListener('click', function(e) {
+    e.preventDefault();
+    // Select table input
+    // e.target is the clicked element!
+    // If it was a td
+    if(e.target && e.target.nodeName == 'TD') {
+      console.log('Color Work!');
+      // Select color input
+      const colorPicker = document.querySelector('#colorPicker').value;
+      e.target.style.backgroundColor = colorPicker;
+    }
+  });
+}
+
+fillColor();
